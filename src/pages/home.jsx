@@ -1,108 +1,105 @@
-import React, { useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stage, useGLTF } from "@react-three/drei";
-import { motion } from "framer-motion";
-
-// Load 3D Model from URL
-const CarModel = ({ modelUrl, rotationY }) => {
-    const { scene } = useGLTF(modelUrl);
-    return (
-        <primitive object={scene} rotation={[0, rotationY, 0]} scale={1.5} />
-    );
-};
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ressuv from '../assets/redsuv.png';
+import Services from "./services";
+import RepairSection from "./repair";
+import Painting from "./painting";
 
 function Home() {
-    const [currentCar, setCurrentCar] = useState(0);
-    const [rotationY, setRotationY] = useState(0);
-
-    const carModels = [
-      "https://raw.githubusercontent.com/pmndrs/drei-assets/master/ferrari/scene.glb",
-      "https://raw.githubusercontent.com/pmndrs/drei-assets/master/ferrari/scene.glb",
-      "https://raw.githubusercontent.com/pmndrs/drei-assets/master/ferrari/scene.glb",
-      "https://raw.githubusercontent.com/pmndrs/drei-assets/master/ferrari/scene.glb",
-      "https://raw.githubusercontent.com/pmndrs/drei-assets/master/ferrari/scene.glb",
-      "https://raw.githubusercontent.com/pmndrs/drei-assets/master/ferrari/scene.glb",
+    const images = [
+        "https://pngimg.com/uploads/audi/audi_PNG1740.png",
+        ressuv,
+        "https://pngimg.com/uploads/audi/audi_PNG1740.png",
+        ressuv,
     ];
 
-    const nextCar = () => setCurrentCar((prev) => (prev + 1) % carModels.length);
-    const prevCar = () =>
-        setCurrentCar((prev) => (prev - 1 + carModels.length) % carModels.length);
 
-    const rotateForward = () => setRotationY((prev) => prev + Math.PI);
-    const rotateBackward = () => setRotationY((prev) => prev - Math.PI);
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % images.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const nextSlide = () => setIndex((prev) => (prev + 1) % images.length);
+    const prevSlide = () =>
+        setIndex((prev) => (prev - 1 + images.length) % images.length);
 
     return (
-        <div className="h-screen flex gap-2 items-center bg-gray-900 text-white">
+        <>
+            <div className="bg-gray-900 ">
+                <div className="md:h-screen 2xl:h-auto 2xl:min-h-[50vh] flex flex-col-reverse md:flex-row gap-2 items-center 2xl:max-w-[1440px] mx-auto text-white px-4">
 
-            <motion.section
-                className="px-5 md:px-16 py-16 w-[50%]"
-                initial={{ opacity: 0, x: -80 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-                <div className="max-w-3xl">
-                    <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                        Professional Car{" "}
-                        <span className="text-yellow-400">Repair</span> & <br />
-                        Premium <span className="text-yellow-400">Garage Services</span>
-                    </h2>
+                    <motion.section
+                        className=" md:pl-8 lg:pl-16 2xl:pl-0 w-full md:w-[50%]"
+                        initial={{ opacity: 0, x: -80 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="text-2xl lg:text-5xl font-bold leading-tight">
+                            Professional Car{" "}
+                            <span className="text-yellow-400">Repair</span> & <br />
+                            Premium <span className="text-yellow-400">Garage Services</span>
+                        </h2>
 
-                    <p className="text-gray-300 mt-4 text-lg">
-                        Your trusted partner for car servicing, painting, mechanical
-                        repairs, detailing & premium maintenance.
-                    </p>
+                        <p className="text-gray-300 mt-4 text-sm lg:text-lg ">
+                            Your trusted partner for car servicing, painting, mechanical
+                            repairs, detailing & premium maintenance.
+                        </p>
 
-                    <div className="flex gap-4 mt-8">
-                        <a href="tel:+919166306480" className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold shadow hover:bg-yellow-300">
-                            Call Now
-                        </a>
+                        <div className="flex gap-4 my-4 md:mt-8">
+                            <a href="tel:+919166306480" className="bg-yellow-400 text-black px-4 py-2 rounded-lg">
+                                Call Now
+                            </a>
+                            <a href="#services" className="border border-yellow-400 text-yellow-400 px-4 py-2 rounded-lg">
+                                View Services
+                            </a>
+                        </div>
+                    </motion.section>
 
-                        <a href="#services" className="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition">
-                            View Services
-                        </a>
-                    </div>
+                    <section className="w-full md:w-[50%] h-screen md:h-auto flex flex-col items-center justify-center">
+                        <div className="relative w-full h-[400px] lg:h-[450px] overflow-hidden flex items-center justify-center">
+                            <AnimatePresence>
+                                <motion.img
+                                    key={index}
+                                    src={images[index]}
+                                    className="absolute  lg:h-[450px] object-contain drop-shadow-2xl"
+                                    initial={{ opacity: 0, x: 100 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -100 }}
+                                    transition={{ duration: 0.6 }}
+                                />
+                            </AnimatePresence>
+                        </div>
+
+                        <div className="flex gap-4 lg:mt-4">
+                            <button
+                                onClick={prevSlide}
+                                className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600"
+                            >
+                                Previous
+                            </button>
+
+                            <button
+                                onClick={nextSlide}
+                                className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600"
+                            >
+                                Next
+                            </button>
+                        </div>
+                    </section>
+
                 </div>
-            </motion.section>
 
-            <motion.section
-                className="w-[50%] flex flex-col items-center justify-center"
-                initial={{ opacity: 0, x: 80 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            >
-                <div className="h-[450px]">
-                    {/* <Canvas className="w-full h-[500px]">
-                        <ambientLight intensity={0.6} />
-                        <directionalLight intensity={1} position={[5, 5, 5]} />
-                        <Stage environment="city" intensity={0.7}>
-                            <CarModel modelUrl={carModels[currentCar]} rotationY={rotationY} />
-                        </Stage>
-                        <OrbitControls enablePan={false} enableZoom={true} />
-                    </Canvas> */}
+            </div>
+            <Services />
+            <RepairSection />
+            <Painting />
+        </>
 
-                </div>
-
-                <div className="flex gap-4 mt-4">
-                    <button onClick={rotateBackward} className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
-                        Rotate Back
-                    </button>
-
-                    <button onClick={rotateForward} className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
-                        Rotate Forward
-                    </button>
-                </div>
-
-                <div className="flex gap-4 mt-3">
-                    <button onClick={prevCar} className="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300">
-                        Previous Car
-                    </button>
-
-                    <button onClick={nextCar} className="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300">
-                        Next Car
-                    </button>
-                </div>
-            </motion.section>
-        </div>
     );
 }
 
