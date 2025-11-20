@@ -91,7 +91,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.95 }}
                 href="tel:+919166306480"
                 className="flex items-center gap-3 bg-yellow-500/20 border border-yellow-400/40 
-                hover:bg-yellow-500/30 transition p-2  md:p-4 justify-center md:justify-start rounded-xl"
+                hover:bg-yellow-500/30 transition p-2  md:p-4 justify-center rounded-xl"
               >
                 <FaPhoneAlt className="text-yellow-400 text-sm md:text-xl" />
                 <span className="font-semibold">Call Now: +91 9166306480</span>
@@ -102,7 +102,7 @@ export default function Contact() {
                 href="https://wa.me/919166306480?text=Hi!%20I%20want%20to%20know%20more%20about%20your%20garage%20services."
                 target="_blank"
                 className="flex items-center gap-3 bg-green-500/20 border border-green-400/40 
-                hover:bg-green-500/30 transition p-2 md:p-4 justify-center md:justify-start rounded-xl"
+                hover:bg-green-500/30 transition p-2 md:p-4 justify-center  rounded-xl"
               >
                 <FaWhatsapp className="text-green-400  text-sm md:text-xl" />
                 <span className="font-semibold">Chat on WhatsApp</span>
@@ -135,7 +135,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-8"
+            className="backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-4 md:p-8"
           >
             <h3 className="text-3xl font-bold mb-6">
               Send <span className="text-yellow-400">Message</span>
