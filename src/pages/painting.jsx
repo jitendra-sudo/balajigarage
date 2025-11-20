@@ -28,17 +28,17 @@ export default function PaintingSection() {
   ];
 
   return (
-    <section className="bg-gray-900 text-white py-16 px-6 md:px-12 lg:px-20">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-900 text-white py-3  px-4 md:px-12">
+      <div className="max-w-[1440px] mx-auto">
 
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center py-6"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-2xl md:text-5xl font-bold">
             Car <span className="text-yellow-400">Painting Services</span>
           </h2>
           <p className="text-gray-300 mt-3 max-w-2xl mx-auto text-sm md:text-base">

@@ -4,6 +4,8 @@ import ressuv from '../assets/redsuv.png';
 import Services from "./services";
 import RepairSection from "./repair";
 import Painting from "./painting";
+import Contact from "./contact";
+import Footer from "./footer";
 
 function Home() {
     const images = [
@@ -30,9 +32,8 @@ function Home() {
 
     return (
         <>
-            <div className="bg-gray-900 ">
-                <div className="md:h-screen 2xl:h-auto 2xl:min-h-[50vh] flex flex-col-reverse md:flex-row gap-2 items-center 2xl:max-w-[1440px] mx-auto text-white px-4">
-
+            <div className="bg-gray-900">
+                <div className="md:h-screen 2xl:h-auto flex flex-col-reverse md:flex-row gap-2 items-center w-full px-4 md:px-12 2xl:max-w-[1440px] mx-auto  text-white ">
                     <motion.section
                         className=" md:pl-8 lg:pl-16 2xl:pl-0 w-full md:w-[50%]"
                         initial={{ opacity: 0, x: -80 }}
@@ -45,13 +46,13 @@ function Home() {
                             Premium <span className="text-yellow-400">Garage Services</span>
                         </h2>
 
-                        <p className="text-gray-300 mt-4 text-sm lg:text-lg ">
+                        <p className="text-gray-300 mt-4 text-sm  lg:text-lg ">
                             Your trusted partner for car servicing, painting, mechanical
                             repairs, detailing & premium maintenance.
                         </p>
 
                         <div className="flex gap-4 my-4 md:mt-8">
-                            <a href="tel:+919166306480" className="bg-yellow-400 text-black px-4 py-2 rounded-lg">
+                            <a href="tel:+919166306480" className="bg-gray-300 text-black px-4 py-2 rounded-lg">
                                 Call Now
                             </a>
                             <a href="#services" className="border border-yellow-400 text-yellow-400 px-4 py-2 rounded-lg">
@@ -91,13 +92,13 @@ function Home() {
                             </button>
                         </div>
                     </section>
-
                 </div>
-
             </div>
             <Services />
             <RepairSection />
             <Painting />
+            <Contact />
+            <Footer />
         </>
 
     );

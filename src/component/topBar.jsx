@@ -39,7 +39,7 @@ function TopBar() {
           <li><a href="#painting" className="block">Painting</a></li>
           <li><a href="#contact" className="block">Contact</a></li>
 
-          <a href="tel:+919166306480" className="flex items-center justify-center gap-1 bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold shadow hover:bg-yellow-300" >
+          <a   href="tel:+919166306480"   className="flex items-center justify-center gap-1 bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold shadow hover:bg-yellow-300" >
             <FaPhoneAlt size={18} /> Call Now
           </a>
         </ul>

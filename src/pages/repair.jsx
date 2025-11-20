@@ -4,8 +4,8 @@ import { FaPaintRoller, FaSprayCan } from "react-icons/fa";
 
 export default function PaintingSection() {
   return (
-    <section className="bg-gray-900 text-white py-10 px-4 md:px-16">
-      <div className="max-w-[1440px] mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <section className="bg-gray-900 text-white md:py-10 px-4 md:px-12">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row gap-6 md:gap-12 items-center">
 
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -26,13 +26,13 @@ export default function PaintingSection() {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="space-y-6"
+          className="space-y-2"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
+          <h2 className="text-2xl md:text-5xl font-bold leading-tight">
             Premium Car <span className="text-yellow-400">Painting</span>
           </h2>
 
-          <p className="text-gray-300 text-sm lg:text-lg leading-relaxed">
+          <p className="text-gray-300 text-xs lg:text-lg leading-relaxed">
             Transform your vehicle with our world-class painting and detailing
             services. We use high-quality paint, precision tools, and factory-level
             finishing techniques to restore your car’s original shine.
@@ -44,7 +44,7 @@ export default function PaintingSection() {
               <FaPaintRoller className="text-yellow-400 text-3xl mt-1" />
               <div>
                 <h4 className="text-md md:text-xl font-semibold">Full Body Painting</h4>
-                <p className="text-gray-400 text-sm md:text-base">
+                <p className="text-gray-400 text-xs md:text-base">
                   Factory-grade finish using advanced spray booths and premium paint.
                 </p>
               </div>
@@ -54,7 +54,7 @@ export default function PaintingSection() {
               <FaSprayCan className="text-yellow-400 text-3xl mt-1" />
               <div>
                 <h4 className="text-md md:text-xl font-semibold">Scratch & Dent Painting</h4>
-                <p className="text-gray-400 text-sm md:text-base">
+                <p className="text-gray-400 text-xs md:text-base">
                   Spot painting & color matching to make your car look brand new.
                 </p>
               </div>
