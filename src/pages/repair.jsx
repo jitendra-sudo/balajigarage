@@ -4,8 +4,8 @@ import { FaPaintRoller, FaSprayCan } from "react-icons/fa";
 
 export default function PaintingSection() {
   return (
-    <section className="bg-gray-900 text-white md:py-10 px-4 md:px-12">
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row gap-6 md:gap-12 items-center">
+    <section id="repair" className="bg-gray-900 text-white md:py-10 px-4 md:px-12">
+      <div className="max-w-[1440px] mx-auto overflow-hidden flex flex-col md:flex-row gap-6 md:gap-12 items-center">
 
         <motion.div
           initial={{ opacity: 0, x: -50 }}

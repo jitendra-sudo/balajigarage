@@ -11,7 +11,7 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="max-w-[1440px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        className="max-w-[1440px] overflow-hidden mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
       >
 
         {/* BRAND */}
@@ -46,11 +46,11 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
           <ul className="flex flex-col gap-3 text-sm">
-            <li className="hover:text-yellow-400 transition cursor-pointer">Home</li>
-            <li className="hover:text-yellow-400 transition cursor-pointer">About Us</li>
-            <li className="hover:text-yellow-400 transition cursor-pointer">Our Services</li>
-            {/* <li className="hover:text-yellow-400 transition cursor-pointer">Gallery</li> */}
-            <li className="hover:text-yellow-400 transition cursor-pointer">Contact</li>
+            <li className="hover:text-yellow-400 transition cursor-pointer"><a href="/">Home</a></li>
+            <li className="hover:text-yellow-400 transition cursor-pointer"><a href="#services">Our Services</a></li>
+            <li className="hover:text-yellow-400 transition cursor-pointer"><a href="#repair">Repairs</a></li>
+            <li className="hover:text-yellow-400 transition cursor-pointer"><a href="#painting">Painting</a></li>
+            <li className="hover:text-yellow-400 transition cursor-pointer"><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
 
@@ -61,14 +61,14 @@ export default function Footer() {
           <div className="flex items-start gap-3 mb-3">
             <FaPhoneAlt className="text-yellow-400 mt-1" />
             <p className="text-sm">
-              <span className="text-white font-semibold">Phone:</span> +91 9460468419
+              <span className="text-white font-semibold">Phone:</span> +91 9166306480
             </p>
           </div>
 
           <div className="flex items-start gap-3 mb-3">
             <FaWhatsapp className="text-green-400 mt-1" />
             <p className="text-sm">
-              <span className="text-white font-semibold">WhatsApp:</span> +91 9460468419
+              <span className="text-white font-semibold">WhatsApp:</span> +91 9166306480
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export default function Footer() {
       </motion.div>
 
       {/* COPYRIGHT */}
-      <div className="text-center text-sm text-gray-500 mt-10">
+      <div className="text-center text-sm text-gray-500 mt-4">
         © {new Date().getFullYear()} Balaji Garage — All Rights Reserved.
       </div>
     </footer>

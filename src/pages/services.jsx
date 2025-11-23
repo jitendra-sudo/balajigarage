@@ -1,13 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-    FaTools,
-    FaCogs,
-    FaCarCrash,
-    FaPaintRoller,
-    FaBroom,
-    FaFan,
-} from "react-icons/fa";
+import { FaTools, FaCogs, FaCarCrash, FaPaintRoller, FaBroom, FaFan, } from "react-icons/fa";
+import completeCar from '../assets/complete-car.jpg';
 
 export default function Services() {
     const services = [
@@ -48,9 +42,9 @@ export default function Services() {
             id="services"
             className="bg-gray-900 text-white py-10 md:py-16 px-4 md:px-12"
         >
-            <div className="max-w-[1440px] mx-auto">
+            <div className="max-w-[1440px] mx-auto overflow-hidden">
 
-             
+
                 <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-12 items-center">
 
                     {/* LEFT: Services */}
@@ -117,7 +111,7 @@ export default function Services() {
                         className="w-full flex  md:w-[50%] justify-center"
                     >
                         <img
-                            src="https://images.pexels.com/photos/3807271/pexels-photo-3807271.jpeg"
+                            src={completeCar}
                             alt="Mechanic"
                             className="w-full  h-[270px] md:h-[450px] object-cover rounded-2xl shadow-2xl border border-gray-700"
                         />

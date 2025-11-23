@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ressuv from '../assets/redsuv.png';
+import Adobe from '../assets/adobe.png';
+import audi from '../assets/audi.png';
+import merce from '../assets/merce.png';
+import accident from '../assets/accident.png';
+import thar from '../assets/thar.png';
 import Services from "./services";
 import RepairSection from "./repair";
 import Painting from "./painting";
@@ -8,14 +13,7 @@ import Contact from "./contact";
 import Footer from "./footer";
 
 function Home() {
-    const images = [
-        "https://pngimg.com/uploads/audi/audi_PNG1740.png",
-        ressuv,
-        "https://pngimg.com/uploads/audi/audi_PNG1740.png",
-        ressuv,
-    ];
-
-
+    const images = [merce, audi, Adobe, accident, thar,];
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
@@ -32,8 +30,8 @@ function Home() {
 
     return (
         <>
-            <div className="bg-gray-900">
-                <div className="md:h-screen 2xl:h-auto flex flex-col-reverse md:flex-row gap-2 items-center w-full px-4 md:px-12 2xl:max-w-[1440px] mx-auto  text-white ">
+            <div id="home" className="bg-gray-500">
+                <div className="md:h-screen 2xl:h-auto flex flex-col-reverse md:flex-row gap-2 items-center w-full px-4 md:px-12 2xl:max-w-[1440px] overflow-hidden mx-auto  text-white ">
                     <motion.section
                         className=" md:pl-8 lg:pl-16 2xl:pl-0 w-full md:w-[50%]"
                         initial={{ opacity: 0, x: -80 }}

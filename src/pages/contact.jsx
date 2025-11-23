@@ -37,9 +37,9 @@ export default function Contact() {
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 120 }}
-            className="bg-gray-900 border border-white/20 rounded-2xl shadow-xl w-[90%] max-w-3xl p-5"
+            className="bg-gray-900 border border-white/20 rounded-2xl shadow-xl w-[90%] max-w-3xl p-2 md:p-5"
           >
-            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-white mb-2 ml-2 flex items-center gap-2">
               <FaMapMarkerAlt className="text-yellow-400" /> Our Location
             </h3>
 
@@ -55,7 +55,7 @@ export default function Contact() {
             <button
               onClick={() => setOpen(false)}
               className="mt-5 w-full bg-yellow-500/20 hover:bg-yellow-500/30
-                text-yellow-400 font-semibold p-3 rounded-xl border border-yellow-500/40 transition"
+                text-yellow-400 font-semibold p-2 md:p-3 rounded-xl border border-yellow-500/40 transition"
             >
               Close
             </button>
@@ -68,7 +68,7 @@ export default function Contact() {
         id="contact"
         className="min-h-screen py-8 md:py-10 px-4 md:px-12 bg-gray-900 text-white flex items-center justify-center"
       >
-        <div className="w-full 2xl:max-w-[1440px] grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="w-full 2xl:max-w-[1440px] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-12">
 
           {/* LEFT SECTION */}
           <motion.div

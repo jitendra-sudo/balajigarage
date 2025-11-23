@@ -1,6 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaPaintRoller, FaSprayCan, FaPalette } from "react-icons/fa";
+import fbpaint from '../assets/fb-paint.jpg';
+import underchassis from '../assets/underchassis.jpg';
+import dentThumb from '../assets/dent-thumb.jpg';
+
 
 export default function PaintingSection() {
   const services = [
@@ -8,28 +12,25 @@ export default function PaintingSection() {
       title: "Full Body Painting",
       desc: "Premium multi-layer paint, factory finish, and complete color restoration.",
       icon: <FaPaintRoller size={28} className="text-yellow-400" />,
-      image:
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80",
+      image:  fbpaint ,
     },
     {
       title: "Panel Painting & Touch-ups",
       desc: "Scratch removal, dent repair painting, and precise panel color matching.",
       icon: <FaSprayCan size={28} className="text-yellow-400" />,
-      image:
-        "https://images.pexels.com/photos/3730413/pexels-photo-3730413.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      image:underchassis,
     },
     {
       title: "Custom Paint & Finishes",
       desc: "Matte, glossy, metallic, dual-tone, and special custom paint projects.",
       icon: <FaPalette size={28} className="text-yellow-400" />,
-      image:
-        "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1000&q=80",
+      image: dentThumb,
     },
   ];
 
   return (
-    <section className="bg-gray-900 text-white py-3  px-4 md:px-12">
-      <div className="max-w-[1440px] mx-auto">
+    <section id="painting" className="bg-gray-900 text-white py-3  px-4 md:px-12">
+      <div className="max-w-[1440px] mx-auto overflow-hidden">
 
         {/* Heading */}
         <motion.div
